@@ -2,9 +2,15 @@ import json
 import os
 import sys
 from tokenizers import Tokenizer, models, pre_tokenizers, decoders, trainers, processors
+from datasets import load_dataset
 
-input_files = sys.argv[1].split(",")
-tokenizer_name = sys.argv[2]
+# new_cache_dir = "/path/to/new/cache/dir"
+# dataset = load_dataset("pubmed", cache_dir=new_cache_dir)
+dataset = load_dataset("pubmed")
+
+input_files = dataset.split(",")
+#tokenizer_name = sys.argv[2]
+tokenizer_name = "Train-1"
 os.system(f"mkdir {tokenizer_name}")
 
 # Initialize a tokenizer
