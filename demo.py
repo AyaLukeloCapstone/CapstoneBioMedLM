@@ -1,3 +1,5 @@
+# THIS CODE IS NOT THE ORIGINAL - IT INCLUDES OUR MODIFICATIONS 
+
 import torch
 
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
@@ -16,3 +18,4 @@ sample_output = model.generate(input_ids, do_sample=True, max_length=50, top_k=5
 
 print("Output:\n" + 100 * "-")
 print(tokenizer.decode(sample_output[0], skip_special_tokens=True))
+ 
